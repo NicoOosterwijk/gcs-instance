@@ -3,11 +3,12 @@
 basic_config:
     boot_disk_size: 10GB
     boot_disk_type: pd-standard
-    name: basic
-    image_family: ubuntu-1604-lts
-    image_project: ubuntu-os-cloud
+    name: tst-stretto
+    image_family: centos-7
+    image_project: centos-cloud
     can_ip_forward: --can-ip-forward
-    zone: asia-east1-c
+    zone: europe-west4-a
     ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/gcloud.pub"
-    instances_count: 3
+    instances_count: 4
+    tags: http-server,test-stretto-netw
 inventory_output_file: ./output.ini
