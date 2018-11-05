@@ -6,6 +6,7 @@ basic_config:
     name: vm-nico
     image_family: centos-7
     image_project: centos-cloud
+    machine-type: n1-standard-2
     can_ip_forward: --can-ip-forward
     zone: europe-west4-a
     ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/gcloud.pub"
