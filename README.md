@@ -16,7 +16,7 @@ You should setup your `gcloud` environment first, and you can refer to [here](ht
 ## Setup the preferred group_vars, they are by default:
 - Boot disk size: **10Gb**
 - OS: **CentOS 7**
-- Machine-type: **n1-standard-2** (2 CPU's, 8Gb memory)
+- Machine-type: **n1-standard-1** (1 CPU, 4Gb memory)
 - Zone: **Europe West 4a**
 - Network tags: **http-server,test-stretto-netw**
 - Nr. of instances to create: **4**
