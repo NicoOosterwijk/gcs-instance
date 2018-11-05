@@ -18,7 +18,7 @@ You should setup your `gcloud` environment first, and you can refer to [here](ht
 - Zone: Europe West 4a
 - Network tags: http-server,test-stretto-netw
 - Nr. of instances to create: 4
-- Name of instances: tst-stretto-00x where x=the number of instances to create
+- Name of instances: vm-nico-00x where x=the number of instances to create
 - ssh key file: public key to use to logon - ~/.ssh/gcloud.pub
 
 If you specify the ssh public key file, then gcloud will use that key when it create instances and you can connect to those instances without password
