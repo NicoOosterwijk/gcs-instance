@@ -24,3 +24,5 @@ The format of key files should follow [Managing Instance Access with SSH Key Pai
 
 ## How to use
 You should setup `gcloud` environment first, and you can refer to [here](https://cloud.google.com/compute/docs/gcloud-compute/#auth) to learn more about it.
+
+Then, just run the create-instance playbook
