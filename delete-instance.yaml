@@ -1,7 +1,6 @@
 ---
-
 - name: Delete Instance on Google Cloud Platform
-  gather_facts: false
-  hosts: provisioner
+  gather_facts: False
+  hosts: myMBP
   roles:
-    - role: roles/gce/delete_instance
+    - { role: delete_instance, tags: 'delete' }
