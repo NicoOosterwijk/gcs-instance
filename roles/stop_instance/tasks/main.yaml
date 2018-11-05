@@ -24,9 +24,11 @@
     - "start=1 end={{ basic_config.instances_count }}"
   when: instance_created.stdout != ""
 
-- name: Delete instance on google cloud platform
+- name: Stop instance on google cloud platform
   command: >
-    gcloud compute instances delete
+    gcloud compute instances stop
     {{ hostvars.localhost.instance_names.results | map(attribute='msg') | list | join(' ') }}
+    --zone="{{ basic_config.zone }}"
+
   changed_when: false
-  when: instance_created.stdout != ""
+  when: '"RUNNING" in instance_created.stdout'

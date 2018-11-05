@@ -3,9 +3,10 @@
 basic_config:
     boot_disk_size: 10GB
     boot_disk_type: pd-standard
-    name: tst-stretto
+    name: vm-nico
     image_family: centos-7
     image_project: centos-cloud
+    machine_type: n1-standard-1
     can_ip_forward: --can-ip-forward
     zone: europe-west4-a
     ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/gcloud.pub"
