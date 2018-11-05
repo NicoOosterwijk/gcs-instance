@@ -5,9 +5,10 @@ This repostory provides the `gcloud` tool to manage google cloud platform.
 Virtual Machines
 ================
 ## Google Compute Engine
-### Create instances
-### Stop instances
-### Delete instances
+### Roles:
+- create_instance
+- stop_instance
+- delete_instance
 
 ## How to use
 You should setup your `gcloud` environment first, and you can refer to [here](https://cloud.google.com/compute/docs/gcloud-compute/#auth) to learn more about it.
