@@ -28,6 +28,7 @@
   command: >
     gcloud compute instances stop
     {{ hostvars.localhost.instance_names.results | map(attribute='msg') | list | join(' ') }}
+    --zone="{{ basic_config.zone }}"
 
   changed_when: false
   when: '"RUNNING" in instance_created.stdout'
