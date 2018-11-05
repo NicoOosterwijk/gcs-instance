@@ -28,5 +28,6 @@
   command: >
     gcloud compute instances delete
     {{ hostvars.localhost.instance_names.results | map(attribute='msg') | list | join(' ') }}
+    --zone="{{ basic_config.zone }}"
   changed_when: false
   when: instance_created.stdout != ""
