@@ -3,7 +3,7 @@
 basic_config:
     boot_disk_size: 10GB
     boot_disk_type: pd-standard
-    name: vm-nico
+    name: tst-stretto
     image_family: centos-7
     image_project: centos-cloud
     machine_type: n1-standard-1
