@@ -9,6 +9,7 @@ Virtual Machines
 - create_instance
 - stop_instance
 - delete_instance
+- create_group
 
 ## How to use
 You should setup your `gcloud` environment first, and you can refer to [here](https://cloud.google.com/compute/docs/gcloud-compute/#auth) to learn more about it.
@@ -27,3 +28,7 @@ If you specify the ssh public key file, then gcloud will use that key when it cr
 The format of key files should follow [Managing Instance Access with SSH Key Pairs](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys)
 
 Then, just run the create-instance playbook to create your virtual machines.
+
+## Create_group
+### This role will create the admin and db instance groups and add the instances to it.
+

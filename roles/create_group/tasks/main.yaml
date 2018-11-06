@@ -1,0 +1,72 @@
+---
+# vim:ft=ansible:
+- name: Check if Google Cloud SDK is installed
+  command: gcloud version
+  register: gcloud_installed
+  changed_when: false
+  ignore_errors: yes
+  tags: check,admin,db
+
+- fail:
+    msg: "Please make sure Google Cloud SDK is installed before executing the role."
+  when: gcloud_installed | failed
+  tags: check,admin,db
+
+- name: Check if admin-group exists
+  command: "gcloud compute instance-groups list --filter='name:{{ instance_admin_group.name }}' --format='value(NAME)'"
+  register: group_exists
+  changed_when: false
+  ignore_errors: yes
+  tags: check,admin
+
+- debug:
+    var: group_exists.stdout
+  tags: check,admin
+
+- name: Create instance-admin-group on google cloud platform
+  command: >
+    gcloud compute instance-groups unmanaged create {{ instance_admin_group.name }}
+    --project="{{ instance_admin_group.project }}"
+    --zone="{{ instance_admin_group.zone }}"
+  register: group_created
+  when: group_exists.stdout == ""
+  tags: admin
+
+- name: Add instances to instance-admin-group on google cloud platform
+  command: >
+    gcloud compute instance-groups unmanaged add-instances {{ instance_admin_group.name }}
+    --instances="{{ instance_admin_group.instances }}"
+    --zone="{{ instance_admin_group.zone }}"
+  changed_when: false
+  when: group_created.changed == True
+  tags: admin
+
+- name: Check if db-group exists
+  command: "gcloud compute instance-groups list --filter='name:{{ instance_db_group.name }}' --format='value(NAME)'"
+  register: dbgroup_exists
+  changed_when: false
+  ignore_errors: yes
+  tags: check,db
+
+- debug:
+    var: dbgroup_exists.stdout
+  tags: check,db
+
+- name: Create instance-db-group on google cloud platform
+  command: >
+    gcloud compute instance-groups unmanaged create {{ instance_db_group.name }}
+    --project="{{ instance_db_group.project }}"
+    --zone="{{ instance_db_group.zone }}"
+  register: dbgroup_created
+  when: dbgroup_exists.stdout == ""
+  tags: db
+
+- name: Add instances to instance-db-group on google cloud platform
+  command: >
+    gcloud compute instance-groups unmanaged add-instances {{ instance_db_group.name }}
+    --instances="{{ instance_db_group.instances }}"
+    --zone="{{ instance_db_group.zone }}"
+  changed_when: false
+  when: dbgroup_created.changed == True
+  tags: db
+
