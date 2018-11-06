@@ -27,8 +27,13 @@ You should setup your `gcloud` environment first, and you can refer to [here](ht
 If you specify the ssh public key file, then gcloud will use that key when it create instances and you can connect to those instances without password
 The format of key files should follow [Managing Instance Access with SSH Key Pairs](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys)
 
-Then, just run the create-instance playbook to create your virtual machines.
+Then, just run the create-instance playbook to create your virtual machines:
+**ansible-playbook create_instance.yaml**
 
 ## Create_group
 ### This role will create the admin and db instance groups and add the instances to it.
+instance 1 and instance 2 will be members of the admin-group,
+instance 3 and instance 4 will be members of the db-group.
+
+**this role will be executed by the create_instance role!** but can be skipped by using **--skip-tags=creategroups**
 

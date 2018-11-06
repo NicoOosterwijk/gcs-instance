@@ -5,4 +5,5 @@
   hosts: myMBP
   roles:
     - { role: create_instance, tags: 'create' }
+    - { role: create_group, tags: 'creategroups' }
 
