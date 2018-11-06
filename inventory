@@ -1,2 +1,2 @@
-[provisioner]
+[myMBP]
 localhost ansible_connection=local

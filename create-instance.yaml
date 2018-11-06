@@ -1,7 +1,8 @@
 ---
 
 - name: Create Instance on Google Cloud Platform
-  gather_facts: false
-  hosts: provisioner
+  gather_facts: False
+  hosts: myMBP
   roles:
-    - role: roles/gce/create_instance
+    - { role: create_instance, tags: 'create' }
+
