@@ -9,7 +9,7 @@ basic_config:
     machine_type: n1-standard-1
     can_ip_forward: --can-ip-forward
     zone: europe-west4-a
-    ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/gcloud.pub"
+    # ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/gcloud.pub"
     instances_count: 4
     tags: http-server,test-stretto-netw
 
@@ -19,11 +19,11 @@ instance_admin_group:
   name: stretto-admin-group
   project: nicos-101-project
   zone: europe-west4-a
-  instances: tst01,tst02
+  instances: tst-stretto-001,tst-stretto-002
 
 instance_db_group:
   name: stretto-db-group
   project: nicos-101-project
   zone: europe-west4-a
-  instances: tst03,tst04
+  instances: tst-stretto-003,tst-stretto-004
 
