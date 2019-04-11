@@ -3,7 +3,7 @@
 basic_config:
     boot_disk_size: 10GB
     boot_disk_type: pd-standard
-    name: tst-stretto
+    name: tst-nico
     image_family: centos-7
     image_project: centos-cloud
     machine_type: n1-standard-1
@@ -11,19 +11,19 @@ basic_config:
     zone: europe-west4-a
     # ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/gcloud.pub"
     instances_count: 4
-    tags: http-server,test-stretto-netw
+    tags: http-server,test-nico-netw
 
 inventory_output_file: ./output.ini
 
 instance_admin_group:
-  name: stretto-admin-group
+  name: nico-admin-group
   project: nicos-101-project
   zone: europe-west4-a
-  instances: tst-stretto-001,tst-stretto-002
+  instances: tst-nico-001,tst-nico-002
 
 instance_db_group:
-  name: stretto-db-group
+  name: nico-db-group
   project: nicos-101-project
   zone: europe-west4-a
-  instances: tst-stretto-003,tst-stretto-004
+  instances: tst-nico-003,tst-nico-004
 
