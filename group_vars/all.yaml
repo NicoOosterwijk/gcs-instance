@@ -9,7 +9,7 @@ basic_config:
     machine_type: n1-standard-1
     can_ip_forward: --can-ip-forward
     zone: europe-west4-a
-    # ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/gcloud.pub"
+    ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
     instances_count: 4
     tags: http-server,test-nico-netw
 
@@ -17,13 +17,12 @@ inventory_output_file: ./output.ini
 
 instance_admin_group:
   name: nico-admin-group
-  project: nicos-101-project
+  project: nico-1234
   zone: europe-west4-a
   instances: tst-nico-001,tst-nico-002
 
 instance_db_group:
   name: nico-db-group
-  project: nicos-101-project
+  project: nico-1234
   zone: europe-west4-a
   instances: tst-nico-003,tst-nico-004
-

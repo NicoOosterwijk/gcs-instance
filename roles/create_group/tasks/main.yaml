@@ -9,7 +9,7 @@
 
 - fail:
     msg: "Please make sure Google Cloud SDK is installed before executing the role."
-  when: gcloud_installed | failed
+  when: gcloud_installed is failed
   tags: check,admin,db
 
 - name: Check if admin-group exists
@@ -69,4 +69,3 @@
   changed_when: false
   when: dbgroup_created.changed == True
   tags: db
-

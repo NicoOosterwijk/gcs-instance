@@ -14,6 +14,8 @@ Virtual Machines
 ## How to use
 You should setup your `gcloud` environment first, and you can refer to [here](https://cloud.google.com/compute/docs/gcloud-compute/#auth) to learn more about it.
 
+The next step will be to create and add your **ssh-key** to the Google Compute Engine metadata. Use the [Google Cloud Console](https://console.cloud.google.com) to add your key.
+
 ## Setup the preferred group_vars, they are by default:
 - Boot disk size: **10Gb**
 - OS: **CentOS 7**
@@ -36,4 +38,3 @@ instance 1 and instance 2 will be members of the admin-group,
 instance 3 and instance 4 will be members of the db-group.
 
 **this role will be executed by the create_instance role!** but can be skipped by using **--skip-tags=creategroups**
-
