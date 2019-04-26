@@ -1,8 +1,0 @@
----
-
-- name: Create Instance-Group on Google Cloud Platform
-  gather_facts: False
-  hosts: myMBP
-  roles:
-    - { role: create_group, tags: 'creategroup' }
-

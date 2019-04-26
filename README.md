@@ -31,8 +31,7 @@ The format of key files should follow [Managing Instance Access with SSH Key Pai
 # Playbooks:
 
 ## Create_Instances
-Then, just run the create-instance playbook to create your virtual machines:
-**ansible-playbook create_instance.yaml**
+This playbook will create the instances on Google Cloud Services
 
 ## Create_groups
 ### This role will create the admin and db instance groups and add the instances to it.

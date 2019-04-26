@@ -2,4 +2,7 @@
 # file: site.yml
 # this playbook defines the entire infrastructure
 - import_playbook: create-instances.yaml
+  tags: create
 - import_playbook: create-groups.yaml
+  tages: create
+
