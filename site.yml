@@ -1,0 +1,5 @@
+---
+# file: site.yml
+# this playbook defines the entire infrastructure
+- import_playbook: create-instances.yaml
+- import_playbook: create-groups.yaml

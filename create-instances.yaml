@@ -1,0 +1,8 @@
+---
+
+- name: Create Instance on Google Cloud Platform
+  gather_facts: False
+  hosts: myMBP
+  roles:
+    - { role: create_instance, tags: 'create' }
+
