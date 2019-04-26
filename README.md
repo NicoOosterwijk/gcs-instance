@@ -5,10 +5,10 @@ Virtual Machines
 ================
 ## Google Compute Engine
 ### Roles:
-- create_instance
-- stop_instance
-- delete_instance
-- create_group
+- create_instances
+- stop_instances
+- delete_instances
+- create_groups
 
 ## How to use
 You should setup your `gcloud` environment first, and you can refer to [here](https://cloud.google.com/compute/docs/gcloud-compute/#auth) to learn more about it.
@@ -31,7 +31,7 @@ The format of key files should follow [Managing Instance Access with SSH Key Pai
 # Playbooks:
 
 ## Create_Instances
-This playbook will create the instances on Google Cloud Services
+This playbook will create the instances on Google Cloud Services. The names of the instances are defined in variables.
 
 ## Create_groups
 ### This role will create the admin and db instance groups and add the instances to it.
